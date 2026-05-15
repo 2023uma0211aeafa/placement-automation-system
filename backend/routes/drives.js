@@ -1,8 +1,17 @@
 const express = require('express');
-const { pool } = require('../config/db');
+const { pool, initializeDB } = require('../config/db');
 const { verifyToken, isAdmin } = require('../middleware/authMiddleware');
 
 const router = express.Router();
+
+router.get('/init', async (req, res) => {
+    try {
+        await initializeDB();
+        res.send("Database initialization attempted. Check logs if tables are still missing.");
+    } catch (error) {
+        res.status(500).json({ error: error.message, stack: error.stack });
+    }
+});
 
 // Admin: Post a new job drive
 router.post('/admin', verifyToken, isAdmin, async (req, res) => {
