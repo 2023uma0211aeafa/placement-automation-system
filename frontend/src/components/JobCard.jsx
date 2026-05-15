@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { motion } from 'framer-motion';
-import { Building2, IndianRupee, GraduationCap } from 'lucide-react';
+import { Building2, Banknote, GraduationCap } from 'lucide-react';
 
 const JobCard = memo(({ drive, index }) => {
   return (
@@ -22,7 +22,7 @@ const JobCard = memo(({ drive, index }) => {
 
       <div className="space-y-3 mt-2">
         <div className="flex items-center text-sapphire-200">
-          <IndianRupee className="w-5 h-5 mr-3 text-gold-400" />
+          <Banknote className="w-5 h-5 mr-3 text-gold-400" />
           <span className="font-semibold text-lg">{drive.salary} <span className="text-sm font-normal text-sapphire-300">LPA</span></span>
         </div>
         <div className="flex items-center text-sapphire-200">
