@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sapphire-900: #001A33;
+  --color-sapphire-800: #00264D;
+  --color-sapphire-700: #003366;
+  --color-sapphire-600: #004080;
+  --color-sapphire-500: #004C99;
+  --color-sapphire-400: #0066CC;
+  --color-sapphire-300: #3399FF;
+  --color-sapphire-200: #80BFFF;
+  --color-sapphire-100: #CCE6FF;
+
+  --color-gold-500: #FBBF24;
+  --color-gold-400: #FCD34D;
+
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-sapphire-900 text-gray-100 min-h-screen font-sans;
+    background-image: radial-gradient(circle at top right, #00264D, #001A33);
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-[12px] border border-white/20 shadow-xl;
+  }
+  .glass-card {
+    @apply bg-sapphire-800/40 backdrop-blur-[12px] border border-sapphire-600/50 shadow-2xl rounded-2xl;
+  }
+  .gpu-accelerate {
+    will-change: transform, opacity;
+  }
+}
